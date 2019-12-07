@@ -1,3 +1,15 @@
-﻿{
-	"name": "com.waterkat.timew"
+{
+    "name": "com.waterkat.timew",
+    "references": [
+        "GUID:b45a6f521c299ca4584873556aaaa8a3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
