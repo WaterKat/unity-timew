@@ -1,7 +1,7 @@
 {
     "name": "com.waterkat.timew",
     "displayName": "WaterKat TimeW",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "unity": "2018.1",
     "description": "This package provides an easier way to manager time and timed tasks \n\nTo find out more, click the \"View Documentation\" link.",
     "keywords": ["WaterKat", "TimeW", "Time", "Clock", "Task", "Ticker", "Looped"],
