@@ -26,7 +26,7 @@ The managers create themselves on first use, so the prefab is optional.
 Copy this folder into your project's `Assets` or `Packages` folder. In recent Unity versions you can instead add a git dependency to `Packages/manifest.json`:
 
 ```json
-"com.waterkat.timew": "https://github.com/WaterKat/TimeW.git"
+"com.waterkat.timew": "https://github.com/WaterKat/unity-timew.git"
 ```
 
 ## Usage

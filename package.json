@@ -4,7 +4,7 @@
     "version": "1.0.2",
     "unity": "2018.1",
     "description": "This package provides an easier way to manage time and timed tasks \n\nTo find out more, click the \"View Documentation\" link.",
-    "documentationUrl": "https://github.com/WaterKat/TimeW#readme",
+    "documentationUrl": "https://github.com/WaterKat/unity-timew#readme",
     "keywords": ["WaterKat", "TimeW", "Time", "Clock", "Task", "Ticker", "Looped"],
     "category": "Tools",
     "dependencies": {}
