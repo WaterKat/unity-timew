@@ -1,24 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace WaterKat.TimeW
 {
+    /// <summary>
+    /// Repeating interval helper. Call Tick() every frame; it returns true once
+    /// every MaxTick seconds.
+    /// </summary>
     [System.Serializable]
-    class Ticker
+    public class Ticker
     {
-        float currentTick = 0;      //in Seconds
         public float MaxTick = 1;   //in Seconds
+
+        private double lastTickTime;    //in Seconds, on the ClockManager timeline
+        private bool started;
 
         public bool Tick()
         {
-            if (currentTick > MaxTick) { currentTick = 0; }
-            currentTick += (float)ClockManager.deltaSeconds;
-            return currentTick >= MaxTick;
+            double now = ClockManager.deltaSeconds;
+            if (!started)
+            {
+                started = true;
+                lastTickTime = now;
+                return false;
+            }
+            if (now - lastTickTime >= MaxTick)
+            {
+                lastTickTime = now;
+                return true;
+            }
+            return false;
         }
         public void Reset()
         {
-            currentTick = 0;
+            started = false;
         }
 
         public Ticker() { }

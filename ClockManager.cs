@@ -204,7 +204,13 @@ namespace WaterKat.TimeW
             if (ClockManager.instance.Clocks.ContainsKey(_clockID))
             {
                 Clock _clock = ClockManager.instance.Clocks[_clockID];
-                return (ClockManager.deltaSeconds - _clock.StartTime) / (_clock.EndTime - _clock.StartTime);
+                double duration = _clock.EndTime - _clock.StartTime;
+                if (duration <= 0)
+                {
+                    return (ClockManager.deltaSeconds >= _clock.EndTime) ? 1 : 0;
+                }
+                double progress = (ClockManager.deltaSeconds - _clock.StartTime) / duration;
+                return Math.Min(Math.Max(progress, 0), 1);
             }
             return 0;
         }

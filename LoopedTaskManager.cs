@@ -94,12 +94,13 @@ namespace WaterKat.TimeW
         }
         public static void RemoveLoopedTasksWithClock(int _clockID)
         {
-            foreach (KeyValuePair<int, LoopedTask> keyValuePair in LoopedTaskManager.instance.LoopedTasks)
+            int[] matchingTaskIDs = LoopedTaskManager.instance.LoopedTasks
+                .Where(keyValuePair => keyValuePair.Value.ClockID == _clockID)
+                .Select(keyValuePair => keyValuePair.Key)
+                .ToArray();
+            foreach (int taskID in matchingTaskIDs)
             {
-                if (keyValuePair.Value.ClockID == _clockID)
-                {
-                    LoopedTaskManager.instance.LoopedTasks.Remove(keyValuePair.Key);
-                }
+                LoopedTaskManager.instance.LoopedTasks.Remove(taskID);
             }
         }
         private static void RunLoopedTask(int _taskID)
